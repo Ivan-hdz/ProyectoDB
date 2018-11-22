@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesion - Proyecto</title>
+    <link href="./main.css" rel="stylesheet">
+  </head>
+  <body>
+  <div class="container">
+    <form class="vertical-center">
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <input id="email" type="email" placeholder="Correo electronico" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Contraseña</label>
+        <input id="pwd" placeholder="Contraseña" type="password" class="form-control"/>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary" id="btn_login">Iniciar sesion</button>
+        <button type="button" class="btn btn-danger" id="btn_regis">Registrar</button>
+      </div>
+    </form>
+  </div>
+  </body>
+  <script>
+      // You can also require other files to run in this process
+      require('./index.js')
+  </script>
+</html>

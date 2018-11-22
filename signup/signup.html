@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Usuario - Proyecto</title>
+    <link href="./signup.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Nuevo usuario</h1>
+    <form >
+        <h3>Datos básicos</h3>
+        <div class="form-group">
+            <input required class="form-control" name="email" type="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input required class="form-control" name="pwd" type="password" placeholder="Contraseña">
+        </div>
+        <div class="form-group">
+            <input required class="form-control" name="nombre"  type="text" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+            <input required class="form-control" name="aPaterno" type="text" placeholder="Primer apellnameo">
+        </div>
+        <div class="form-group">
+            <input required class="form-control" name="aMaterno" type="text" placeholder="Segundo apellnameo">
+        </div>
+        <div class="form-group">
+            <input required class="form-control" name="edad" min="0" max="100" type="number" placeholder="Edad">
+        </div>
+        <div class="form-group">
+            <select required name="sexo" class="form-control">
+                <option value="0">Mujer</option>
+                <option value="1">Hombre</option>
+            </select>
+        </div>
+        <h3>Direccion</h3>
+        <div class="form-group">
+            <input type="text" class="form-control" name="cp" placeholder="Código Postal">
+        </div>
+        <div class="form-group">
+            <select required name="sepomex" id="sepomex" class="form-control">
+                <option value="">Introduzca un código postal</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input required class="form-control" type="text" name="calle" placeholder="Calle">
+        </div>
+        <div class="form-group">
+            <input required class="form-control" name="numExt" min="0" type="number" placeholder="Número exterior">
+        </div>
+        <h3>Tipo de cuenta</h3>
+        <div class="form-group">
+            <select required class="form-control" name="puesto">
+                <option value="0">Administrador</option>
+                <option value="1">Operador</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="btn_signup">Registrar</button>
+            <button type="button" class="btn btn-danger" id="btn_cancel">Cancelar</button>
+        </div>
+
+    </form>
+</div>
+</body>
+<script>
+    // You can also require other files to run in this process
+    require('./signup.js')
+</script>
+</html>
