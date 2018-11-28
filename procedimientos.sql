@@ -9,40 +9,36 @@ create procedure new_user(
 	in idGenero int(3),
 	in idSepomex mediumint(8) unsigned,
 	in calle varchar(250),
-	in numInterior int(5),
+	in numExt int(5),
 	in edad int(3)
 	)
 begin
 	declare dirID int;
 	declare infPerID int;
-	declare idUser int;
+	declare idUserVar int;
+	if (select email from usuario as u where u.email = email) = null then
+		set dirID = (select (COALESCE(MAX(idDir),0) + 1) from direccion);
+		insert into direccion values(dirID, calle, idSepomex, numExt);
 
-	set dirID = (select max(idDir) from direccion);
-	if( dirID = null ) then
-		set dirID = 0;
-	else
-		set dirID = (dirID + 1);
-	end if;
-	insert into direccion values(dirID, calle, numInterior, idSepomex);
+		set infPerID = (select (COALESCE(MAX(idInfo),0) + 1) from infoPersona);
+		insert into infoPersona values(infPerID, nombre, aPaterno, aMaterno, idGenero, dirID, edad);
 
-	set infPerID = (select max(idInfo) from infoPersona);
-	if( infPerID = null ) then
-		set infPerID = 0;
+		set idUserVar = (select (COALESCE(MAX(idUser),0) + 1) from usuario);
+		insert into usuario values(idUserVar, email, pass, infPerID, idPuesto);
+		select 'Usuario registrado correctamente' as 'Resultado';
 	else
-		set infPerID = (infPerID + 1);
+		select 'Ya se ha registrado un usuario con este correo' as 'Resultado';
 	end if;
-	insert into infoPersona values(infPerID, nombre, aPaterno, aMaterno, idGenero, dirID, edad);
-
-	set idUser = (select max(idUser) from usuario);
-	if( idUser = null ) then
-		set idUser = 0;
-	else
-		set idUser = (idUser + 1);
-	end if;
-	insert into usuario values(idUser, email, pass, infPerID, idPuesto);
-	select 'Usuario registrado correctamente' as 'Resultado';
 end //
 delimiter ;
 
 delimiter //
-create procedure login(in email )
+create procedure login(in email varchar(250), in pass varchar(257))
+begin
+	if( (select pass from usuario where email = email) = pass ) then
+		select 1 as 'Resultado';
+	else
+		select 0 as 'Resultado';
+	end if; 
+end //
+delimiter ;
