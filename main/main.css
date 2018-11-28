@@ -1,12 +1,6 @@
 @import "../styles.css";
 .vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 85%;
-    margin-right: 5%;
+    margin-top: 20%;
 }
 button{
     float: right;

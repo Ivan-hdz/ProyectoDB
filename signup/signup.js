@@ -1,7 +1,8 @@
 const $ = require('jquery');
 const jQuery = require('jquery');
 const mysql = require('mysql');
-let con = null;
+
+
 (function ($) {
     $.fn.serializeFormJSON = function () {
 
@@ -20,6 +21,8 @@ let con = null;
         return o;
     };
 })(jQuery);
+let con = null;
+
 function initDatabaseConnection(in_user, in_pass) {
     if(con == null)
         con = mysql.createConnection({
@@ -84,8 +87,7 @@ function submitForm(data)
                 if(err)
                     console.log(err)
                 else{
-                    alert(result);
-                    console.log(result)
+                    alert(result[0][0].Resultado);
                 }
             });
         }
@@ -100,4 +102,7 @@ $(document).ready(function () {
         let data = $(this).serializeFormJSON();
         submitForm(data);
     });
+    $("#btn_cancel").click((ev) => {
+        window.location.replace('../main/index.html')
+    })
 });

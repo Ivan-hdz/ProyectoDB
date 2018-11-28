@@ -33,12 +33,44 @@ end //
 delimiter ;
 
 delimiter //
-create procedure login(in email varchar(250), in pass varchar(257))
+create procedure login(in correo varchar(250), in pwd varchar(257))
 begin
-	if( (select pass from usuario where email = email) = pass ) then
+	if (select pass from usuario where email = correo)  = pwd then
 		select 1 as 'Resultado';
 	else
 		select 0 as 'Resultado';
 	end if; 
 end //
 delimiter ;
+
+delimiter //
+create procedure delete_user(in id int) 
+begin
+	declare idInfoVar int;
+	declare idDire int;
+	if (select idUser from usuario where idUser = id) = id then 
+		set idInfoVar = (select idInfoPersona from usuario where idUser = id);
+		set idDire = (select idDir from infoPersona where idInfo = idInfoVar );
+		delete from usuario where idUser = id;
+		delete from infoPersona where idInfo = idInfoVar;
+		delete from direccion where idDir = idDire;
+		select 'Se ha eliminado el usuario correctamente' as 'Resultado';
+	else
+		select 'El usuario que intenta eliminar no existe' as 'Resultado';
+	end if;
+end //
+delimiter ;
+
+create view ver_datos_usuario as 
+	select u.idUser as 'id', u.email as 'email', ip.nombre as 'nombre',
+	  ip.aPaterno as 'aPaterno', ip.aMaterno as 'aMaterno', ip.edad as 'edad',
+	  g.descripcion as 'genero', spo.estado as 'estado', spo.ciudad as 'ciudad',
+	  spo.municipio as 'Municipio', spo.tipo as 'tipoAsentamiento', spo.asentamiento as 'asentamiento',
+	  d.calle as 'calle', d.numExt as 'numeroExterior', cp.nombre as 'puesto'
+	 from usuario as u
+	 inner join infoPersona as ip on u.idInfoPersona = ip.idInfo
+	 inner join catGeneros as g on ip.idGenero = g.idGen
+	 inner join direccion as d on d.idDir = ip.idDir
+	 inner join sepomex as spo on d.idSepomex = spo.id
+	 inner join catPuestos as cp on u.idPuesto = cp.idPuesto;
+
