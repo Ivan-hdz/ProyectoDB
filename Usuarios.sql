@@ -21,3 +21,7 @@ grant update(idEstadoTrabajo) on trabajo to operador@localhost;
 #consultor@localhost : consultor123 (select to ProyectoDB.*)
 create user consultor@localhost;
 grant select on ProyectoDB.* to consultor@localhost identified by 'consultor123'; 
+#inserter@localhost : inserter123 insert to ProyectoDB.*
+create user inserter@localhost;
+grant insert on ProyectoDB.* to inserter@localhost identified by 'inserter123';
+grant execute on procedure new_salario to inserter@localhost;

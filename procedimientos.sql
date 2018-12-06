@@ -74,3 +74,12 @@ create view ver_datos_usuario as
 	 inner join sepomex as spo on d.idSepomex = spo.id
 	 inner join catPuestos as cp on u.idPuesto = cp.idPuesto;
 
+delimiter //
+create procedure new_salario(in n varchar(50), in s decimal) 
+begin 
+	declare id int;
+	set id = (select (COALESCE(MAX(idSueldo),0) + 1) from catSueldos);
+	insert into catSueldos values (id, n, s);
+	select 'Registro realizado con exito' as 'Resultado';
+end //
+delimiter ;

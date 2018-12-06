@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Usuario - Proyecto</title>
+    <link href="./signup.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Registrar usuario</h1>
+    <form >
+        <div class="form-group">
+            <select required name="sepomex" id="sepomex" class="form-control">
+                <option value="">Introduzca un código postal</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="btn_signup">Registrar</button>
+            <button type="button" class="btn btn-danger" id="btn_cancel">Cancelar</button>
+        </div>
+    </form>
+</div>
+</body>
+<script>
+    // You can also require other files to run in this process
+    require('./signup.js')
+</script>
+</html>

@@ -88,6 +88,7 @@ function submitForm(data)
                     console.log(err)
                 else{
                     alert(result[0][0].Resultado);
+                    window.history.back()
                 }
             });
         }
@@ -103,6 +104,6 @@ $(document).ready(function () {
         submitForm(data);
     });
     $("#btn_cancel").click((ev) => {
-        window.location.replace('../main/index.html')
+        window.history.back()
     })
 });

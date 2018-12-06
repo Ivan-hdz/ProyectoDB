@@ -1,8 +1,54 @@
 $ = require('jquery');
 mysql = require('mysql');
-
+const prompt = require('electron-prompt');
 let con = null;
+function newSalario() {
 
+    let name;
+    let salary;
+    prompt({
+        title: 'Registrar nombre de salario',
+        label: 'Nombre',
+        inputAttrs: {
+            type: 'text',
+            required: true
+        }
+    }).then((r) => {
+        if(r) {
+            prompt({
+                title: 'Registrar cantidad de salario',
+                label: 'Salario en MXN: ',
+                inputAttrs: {
+                    type: 'number',
+                    required: true
+                }
+            }).then((r2) => {
+                newSalarioToDB(r, r2);
+            })
+        }
+    })
+}
+function newSalarioToDB(n, s) {
+    console.log(n);
+    console.log(s);
+    initDatabaseConnection('inserter', 'inserter123');
+    con.connect((err) => {
+        if(err) {
+            console.log(err)
+        } else {
+            sql = 'call new_salario(?,?);';
+            con.query(sql, [n, s], (err, res) => {
+                if(err)
+                {
+                    console.log(err)
+                } else {
+                    console.log(res)
+                    alert(res[0][0].Resultado);
+                }
+            })
+        }
+    })
+}
 function initDatabaseConnection(in_user, in_pass) {
     if(con == null)
         con = mysql.createConnection({
@@ -50,7 +96,9 @@ function addListenets() {
 
 $(document).ready(() => {
     initDatabaseConnection('consultor', 'consultor123');
-
+    $('#upSal').click(function () {
+        newSalario();
+    });
     con.connect((err) => {
        if(err) {
            console.log(err)

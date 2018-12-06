@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Iniciar Sesion - Proyecto</title>
-    <link href="./main.css" rel="stylesheet">
-  </head>
-  <body>
-  <div class="container col-12">
-    <form class="vertical-center">
-      <div class="form-group">
-        <label for="email">Email: </label>
-        <input id="email" name="email" type="email" required placeholder="Correo electronico" class="form-control"/>
-      </div>
-      <div class="form-group">
-        <label for="pwd">Contraseña</label>
-        <input name="pwd" id="pwd" placeholder="Contraseña" required type="password" class="form-control"/>
-      </div>
-      <div>
-        <button type="button" class="btn btn-primary" id="btn_login">Iniciar sesion</button>
-        <button type="button" class="btn btn-danger" id="btn_regis">Registrar</button>
-      </div>
-    </form>
-  </div>
-  </body>
-  <script>
-      // You can also require other files to run in this process
-      require('./index.js')
-  </script>
-</html>
+<!-- saved from url=(0052)https://getbootstrap.com/docs/4.1/examples/sign-in/? -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+
+  <title>Signin Template for Bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./main.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+</head>
+
+<body class="text-center">
+<form class="form-signin">
+ <h1 class="h3 mb-3 font-weight-normal">Inicia Sesión</h1>
+  <label for="email" class="sr-only">Correo electronico</label>
+  <input type="email" id="email" name="email" class="form-control" placeholder="Correo" required="" autofocus="">
+  <label for="pwd" class="sr-only">Contraseña</label>
+  <input type="password" id="pwd" name="pwd" class="form-control" placeholder="Contraseña" required="">
+
+  <button class="btn btn-lg btn-primary btn-block" id="btn_login" name="btn_login" type="button">Iniciar Sesión</button>
+  <button class="btn btn-lg btn-primary btn-block" id="btn_regis" name="btn_regis" type="button">Registrar</button>
+</form>
+<script>
+  require('./index')
+</script>
+
+<style id="extraClass">.extraClassAspect {-webkit-transform: scaleX(1)!important;}.extraClassCrop {-webkit-transform: scale(1)!important;}</style></body></html>
