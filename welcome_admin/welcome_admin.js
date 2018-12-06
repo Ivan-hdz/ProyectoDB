@@ -89,7 +89,8 @@ function addListenets() {
             borraUser(btn_value.split(':')[1]);
             console.log('del')
         } else if(btn_value.includes('add')) {
-            console.log('añadir trabajo')
+            localStorage.setItem('updateID', btn_value.split(':')[1])
+            window.location.href = '../editUsuario/edit.view.html'
         }
     });
 }
@@ -123,7 +124,7 @@ $(document).ready(() => {
                           '<td>' + obj.estado + '</td>' +
                           '<td>' +
                           '<button class="btn btn-danger" value="del:'+obj.id+'" >' + 'Eliminar usuario'  + '</button>' +
-                          '<button class="btn btn-primary" value="add:'+obj.id+'">' + 'Agregar trabajo'  + '</button>' +
+                          '<button class="btn btn-primary" value="add:'+obj.id+'">' + 'Actualizar datos'  + '</button>' +
                           '</td>' +
                           '</tr>'
                       );

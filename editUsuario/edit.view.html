@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Usuario - Proyecto</title>
+    <link href="./edit.style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Registrar usuario</h1>
+    <form >
+        <h3>Datos básicos</h3>
+        <div class="form-group">
+            <input required class="form-control" name="nombre"  type="text" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+            <input required class="form-control" name="aPaterno" type="text" placeholder="Primer apellido">
+        </div>
+        <div class="form-group">
+            <input required class="form-control" name="aMaterno" type="text" placeholder="Segundo apellido">
+        </div>
+        <div class="form-group">
+            <input required class="form-control" name="edad" min="0" max="100" type="number" placeholder="Edad">
+        </div>
+        <h3>Direccion</h3>
+        <div class="form-group">
+            <input type="text" class="form-control" id="cp" name="cp" placeholder="Código Postal">
+        </div>
+        <div class="form-group">
+            <select required name="sepomex" id="sepomex" class="form-control">
+                <option value="">Introduzca un código postal</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input required class="form-control" type="text" name="calle" placeholder="Calle">
+        </div>
+        <div class="form-group">
+            <input required class="form-control" name="numExt" min="0" type="number" placeholder="Número exterior">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="btn_signup">Actualizar datos</button>
+            <button type="button" class="btn btn-danger" id="btn_cancel">Cancelar</button>
+        </div>
+
+    </form>
+</div>
+</body>
+<script>
+    // You can also require other files to run in this process
+    require('./edit.controller.js')
+</script>
+</html>
