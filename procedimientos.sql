@@ -83,3 +83,39 @@ begin
 	select 'Registro realizado con exito' as 'Resultado';
 end //
 delimiter ;
+delimiter //
+create procedure update_user(
+	in idusuario int,
+	in n varchar(250),
+	in ap varchar(250),
+	in am varchar(250),
+	in idSepo mediumint(8) unsigned,
+	in s varchar(250),
+	in nE int(5),
+	in ed int(3)
+	)
+begin
+	declare dirID int;
+	declare infPerID int;
+	declare idUserVar int;
+	set dirID = (select dir.idDir from direccion as dir
+		inner join infoPersona as inf on inf.idDir = dir.idDir
+		inner join usuario as us on us.idInfoPersona = inf.idInfo
+		where us.idUser = idusuario);
+	update direccion set calle = s,
+		idSepomex = idSepo,
+		numExt = nE
+	 where idDir = dirID; 
+
+	set infPerID = (select inf.idInfo from direccion as dir
+		inner join infoPersona as inf on inf.idDir = dir.idDir
+		inner join usuario as us on us.idInfoPersona = inf.idInfo
+		where us.idUser = idusuario);
+	update infoPersona set nombre = n,
+	 aPaterno = ap,
+	 aMaterno = am, 
+	 edad = ed
+	 where idInfo = infPerID;
+	select 'Usuario actualizado correctamente' as 'Resultado';
+end //
+delimiter ;

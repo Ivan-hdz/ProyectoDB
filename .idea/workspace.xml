@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1aedde10-41a1-4963-9f51-c271e35e684a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/editUsuario/edit.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editUsuario/edit.style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/editUsuario/edit.view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/welcome_admin/welcome_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/welcome_admin/welcome_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/welcome_admin/welcome_admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/welcome_admin/welcome_admin.js" afterDir="false" />
-    </list>
+    <list default="true" id="1aedde10-41a1-4963-9f51-c271e35e684a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -22,7 +15,7 @@
     <session id="1204789467">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.16" value="1" />
@@ -80,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/welcome_admin/welcome_admin.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="369">
-              <caret line="92" column="66" lean-forward="true" selection-start-line="92" selection-start-column="66" selection-end-line="92" selection-end-column="66" />
+              <caret line="92" column="66" selection-start-line="92" selection-start-column="66" selection-end-line="92" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -98,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/signup/signup.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="158">
-              <caret line="62" column="9" lean-forward="true" selection-end-line="108" selection-end-column="3" />
+              <caret line="62" column="9" selection-end-line="108" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -125,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/signup/signup.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="708">
-              <caret line="37" column="32" lean-forward="true" selection-end-line="71" />
+              <caret line="37" column="32" selection-end-line="71" />
             </state>
           </provider>
         </entry>
@@ -312,16 +305,15 @@
       <workItem from="1544032073376" duration="569000" />
       <workItem from="1544042463180" duration="1343000" />
       <workItem from="1544055887739" duration="596000" />
-      <workItem from="1544091391340" duration="3113000" />
+      <workItem from="1544091391340" duration="3230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46634000" />
+    <option name="totallyTimeSpent" value="46751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15797788" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -421,14 +413,14 @@
     <entry file="file://$PROJECT_DIR$/signup/signup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="708">
-          <caret line="37" column="32" lean-forward="true" selection-end-line="71" />
+          <caret line="37" column="32" selection-end-line="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/signup/signup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
-          <caret line="62" column="9" lean-forward="true" selection-end-line="108" selection-end-column="3" />
+          <caret line="62" column="9" selection-end-line="108" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -449,7 +441,7 @@
     <entry file="file://$PROJECT_DIR$/welcome_admin/welcome_admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
-          <caret line="92" column="66" lean-forward="true" selection-start-line="92" selection-start-column="66" selection-end-line="92" selection-end-column="66" />
+          <caret line="92" column="66" selection-start-line="92" selection-start-column="66" selection-end-line="92" selection-end-column="66" />
         </state>
       </provider>
     </entry>

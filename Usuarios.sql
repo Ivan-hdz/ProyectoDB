@@ -12,6 +12,7 @@ grant all on ProyectoDB.infoPersona to user_admin@localhost identified by 'user_
 grant execute on procedure new_user to user_admin@localhost;
 grant execute on procedure login to user_admin@localhost;
 grant execute on procedure delete_user to user_admin@localhost;
+grant execute on procedure update_user to user_admin@localhost;
 
 #operador@localhost : operador123 (select to ProyectoDB.trabajo, updato to ProyectoDB.trabajo.idEstadoTrabajo)
 create user operador@localhost;
